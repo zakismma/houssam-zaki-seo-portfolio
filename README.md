@@ -1,4 +1,4 @@
-# Sam — SEO Portfolio
+# Houssam Zaki — SEO Portfolio
 
 SEO portfolio showcasing technical, local, and multi-market SEO work: Search Console traffic growth, Google Business Profile rankings, and site builds/migrations.
 
@@ -10,19 +10,19 @@ Open `index.html` in any browser, or deploy via GitHub Pages.
 
 - **Muteki Group** — IT Outstaffing & Software Development
 - **Mitridat** — Logistics Company
-- **Testyword.pl** — Founder & SEO Operator (Polish driving test prep)
-- **Code Siya9a** — Moroccan driving test prep
 - **Freelance SEO Consultant** — Gym, Beauty Salon, Upholstery & More
+
+## Personal Projects
+
+- **Code Siya9a** — Moroccan driving test prep, 13-pillar SEO architecture
 
 ## Adding screenshots
 
-Several cards are placeholders waiting on real assets. Drop the file into this folder with the exact name shown on the card (e.g. `mitridat_gsc.png`, `muteki_website.png`) and it renders automatically — no HTML changes needed.
+Drop the file into this folder with the exact name shown on the card and it renders automatically — no HTML changes needed. Still needed:
 
-Screenshot types still needed:
-- Search Console traffic graphs (Muteki, Mitridat, Testyword.pl, local freelance client)
-- Live site screenshots (Muteki, Mitridat, Testyword.pl, Code Siya9a)
+- `siya9a_website.png` — Code Siya9a live site (content pillars)
 
-GBP screenshots for ROBO Gym and FACE Weybridge are already in place (reused from the SMM portfolio, since they're the same clients/proof).
+Already in place: `muteki_gsc.png`, `muteki_website.png`, `mitridat_gsc.png`, `mitridat_website.png`, `robogym_gsc.png`, `siya9a_gsc.png`, plus the GBP screenshots for ROBO Gym and FACE Weybridge reused from the SMM portfolio.
 
 ## Deploy on GitHub Pages
 
