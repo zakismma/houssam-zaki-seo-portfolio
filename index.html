@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam — SEO Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0F172A; color: #E2E8F0; min-height: 100vh; }
+
+  .hero { padding: 72px 24px 56px; text-align: center; border-bottom: 1px solid #1E293B; }
+  .hero h1 { font-size: 42px; font-weight: 800; color: #F8FAFC; letter-spacing: 1px; margin-bottom: 8px; }
+  .hero .tagline { font-size: 18px; color: #94A3B8; margin-bottom: 24px; }
+  .hero .pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .pill { padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; background: #22C55E22; color: #4ADE80; border: 1px solid #22C55E44; }
+
+  .section { max-width: 1200px; margin: 0 auto; padding: 64px 24px; }
+  .divider { border: none; border-top: 1px solid #1E293B; max-width: 1200px; margin: 0 auto; }
+
+  .client-block { margin-bottom: 0; }
+  .client-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .client-name { font-size: 20px; font-weight: 700; color: #F1F5F9; }
+  .client-type { font-size: 12px; color: #94A3B8; background: #1E293B; padding: 3px 12px; border-radius: 6px; }
+  .client-meta { font-size: 13px; color: #64748B; margin-bottom: 20px; line-height: 1.5; }
+  .client-stats { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+  .stat { font-size: 11px; color: #4ADE80; font-weight: 600; background: #4ADE8011; padding: 4px 12px; border-radius: 6px; border: 1px solid #4ADE8022; }
+
+  .profiles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+
+  .profile-card { background: #1E293B; border: 1px solid #334155; border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+  .profile-card:hover { transform: translateY(-3px); border-color: #22C55E; }
+
+  .profile-screenshot {
+    width: 100%; aspect-ratio: 16 / 10; background: #0F172A; border-bottom: 1px solid #334155;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .profile-screenshot img { width: 100%; height: 100%; object-fit: contain; }
+  .screenshot-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 8px; color: #475569; padding: 12px; text-align: center;
+  }
+  .screenshot-placeholder svg { opacity: 0.35; }
+  .screenshot-placeholder span.label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+  .screenshot-placeholder code { font-size: 10px; color: #64748B; background: #0F172A; padding: 2px 8px; border-radius: 4px; }
+
+  .profile-body { padding: 12px 14px 14px; }
+  .platform-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 6px; }
+  .platform-gsc { color: #4285F4; }
+  .platform-gbp { color: #4285F4; }
+  .platform-website { color: #38BDF8; }
+  .platform-serp { color: #FBBF24; }
+
+  .icon-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 2px; }
+  .dot-gsc { background: #4285F4; }
+  .dot-gbp { background: #4285F4; }
+  .dot-website { background: #38BDF8; }
+  .dot-serp { background: #FBBF24; }
+
+  .profile-name { font-size: 14px; font-weight: 600; color: #F1F5F9; margin-bottom: 4px; }
+  .profile-handle a { font-size: 13px; color: #94A3B8; text-decoration: none; transition: color 0.2s; }
+  .profile-handle a:hover { color: #22C55E; }
+  .profile-role { font-size: 11px; color: #64748B; margin-top: 4px; }
+
+  .footer { text-align: center; padding: 48px 24px; border-top: 1px solid #1E293B; }
+  .footer p { color: #64748B; font-size: 13px; }
+  .footer .cta { display: inline-block; margin-top: 16px; padding: 12px 32px; border-radius: 8px; background: linear-gradient(135deg, #22C55E, #15803D); color: #fff; font-weight: 700; font-size: 14px; text-decoration: none; letter-spacing: 0.5px; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 30px; }
+    .profiles-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>SAM</h1>
+    <p class="tagline">SEO Specialist & Growth Strategist · Local & Multi-Market SEO · Technical Site Optimization</p>
+    <div class="pills">
+      <span class="pill">Technical SEO</span>
+      <span class="pill">Local SEO / GBP</span>
+      <span class="pill">Keyword Research</span>
+      <span class="pill">Link Building</span>
+      <span class="pill">UX/UI for Conversion</span>
+      <span class="pill">Programmatic Content</span>
+      <span class="pill">Site Migration</span>
+    </div>
+  </div>
+
+  <!-- ===================== MUTEKI GROUP ===================== -->
+  <div class="section">
+    <div class="client-block">
+      <div class="client-header">
+        <span class="client-name">Muteki Group</span>
+        <span class="client-type">IT Outstaffing & Software Development</span>
+        <span class="client-type">2026 – Present</span>
+      </div>
+      <div class="client-meta">SEO & Growth Manager (Part-Time) — organic growth strategy for a B2B IT services company. Full Wix → WordPress migration with content hub architecture.</div>
+      <div class="client-stats">
+        <span class="stat">5x organic traffic (first engagement period)</span>
+        <span class="stat">5–15 qualified inbound leads/week</span>
+        <span class="stat">Wix → WordPress migration</span>
+      </div>
+      <div class="profiles-grid">
+        <div class="profile-card">
+          <div class="profile-screenshot">
+            <div class="screenshot-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+              <span class="label">Search Console — Traffic Graph</span>
+              <code>muteki_gsc.png</code>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="platform-badge platform-gsc"><span class="icon-dot dot-gsc"></span> Search Console</div>
+            <div class="profile-name">Muteki Group</div>
+            <div class="profile-role">Organic Traffic Growth</div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-screenshot">
+            <div class="screenshot-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+              <span class="label">Live Site — Content Hub</span>
+              <code>muteki_website.png</code>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="platform-badge platform-website"><span class="icon-dot dot-website"></span> Website</div>
+            <div class="profile-name">Muteki Group</div>
+            <div class="profile-role">Rebuilt on WordPress</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===================== MITRIDAT ===================== -->
+  <div class="section">
+    <div class="client-block">
+      <div class="client-header">
+        <span class="client-name">Mitridat</span>
+        <span class="client-type">Logistics Company</span>
+        <span class="client-type">2024 – 2026</span>
+      </div>
+      <div class="client-meta">SEO Manager — global multi-market SEO strategy, technical SEO, schema markup, and international hreflang implementation.</div>
+      <div class="client-stats">
+        <span class="stat">0 → 6,000+ monthly organic visits</span>
+        <span class="stat">15–25 inbound leads/day</span>
+        <span class="stat">International hreflang</span>
+      </div>
+      <div class="profiles-grid">
+        <div class="profile-card">
+          <div class="profile-screenshot">
+            <div class="screenshot-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+              <span class="label">Search Console — 0 to 6K/mo</span>
+              <code>mitridat_gsc.png</code>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="platform-badge platform-gsc"><span class="icon-dot dot-gsc"></span> Search Console</div>
+            <div class="profile-name">Mitridat</div>
+            <div class="profile-role">Multi-Market Organic Growth</div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-screenshot">
+            <div class="screenshot-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+              <span class="label">Live Site — UX/UI Redesign</span>
+              <code>mitridat_website.png</code>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="platform-badge platform-website"><span class="icon-dot dot-website"></span> Website</div>
+            <div class="profile-name">Mitridat</div>
+            <div class="profile-role">On-Page + Schema Markup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===================== TESTYWORD.PL ===================== -->
+  <div class="section">
+    <div class="client-block">
+      <div class="client-header">
+        <span class="client-name">Testyword.pl</span>
+        <span class="client-type">Founder & SEO Operator</span>
+        <span class="client-type">2025 – Present</span>
+      </div>
+      <div class="client-meta">SEO-first content platform targeting the Polish driving theory exam market (3,533 official questions). Bilingual EN/PL, keyword-first domain strategy, programmatic content on Cloudflare Pages/Workers/D1/R2.</div>
+      <div class="client-stats">
+        <span class="stat">3,533 questions — programmatic build</span>
+        <span class="stat">Bilingual EN/PL</span>
+        <span class="stat">Expanding to Italy (testpatenteonline.it)</span>
+      </div>
+      <div class="profiles-grid">
+        <div class="profile-card">
+          <div class="profile-screenshot">
+            <div class="screenshot-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+              <span class="label">Live Site — Homepage</span>
+              <code>testyword_website.png</code>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="platform-badge platform-website"><span class="icon-dot dot-website"></span> Website</div>
+            <div class="profile-name">Testyword.pl</div>
+            <div class="profile-handle"><a href="https://testyword.pl/" target="_blank">testyword.pl</a></div>
+            <div class="profile-role">Programmatic SEO Build</div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-screenshot">
+            <div class="screenshot-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+              <span class="label">Search Console — Growth</span>
+              <code>testyword_gsc.png</code>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="platform-badge platform-gsc"><span class="icon-dot dot-gsc"></span> Search Console</div>
+            <div class="profile-name">Testyword.pl</div>
+            <div class="profile-role">Organic Growth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===================== CODE SIYA9A ===================== -->
+  <div class="section">
+    <div class="client-block">
+      <div class="client-header">
+        <span class="client-name">Code Siya9a</span>
+        <span class="client-type">Moroccan Driving Test Prep</span>
+        <span class="client-type">2024 – Present</span>
+      </div>
+      <div class="client-meta">SEO Strategist — 13-pillar SEO content architecture in Arabic/Darija. PDF product ladder and WhatsApp funnel for lead generation and monetization.</div>
+      <div class="client-stats">
+        <span class="stat">13-pillar content architecture</span>
+        <span class="stat">Arabic/Darija market</span>
+        <span class="stat">WhatsApp funnel monetization</span>
+      </div>
+      <div class="profiles-grid">
+        <div class="profile-card">
+          <div class="profile-screenshot">
+            <div class="screenshot-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+              <span class="label">Live Site — Content Pillars</span>
+              <code>siya9a_website.png</code>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="platform-badge platform-website"><span class="icon-dot dot-website"></span> Website</div>
+            <div class="profile-name">Code Siya9a</div>
+            <div class="profile-role">13-Pillar SEO Architecture</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===================== FREELANCE SEO CONSULTANT ===================== -->
+  <div class="section">
+    <div class="client-block">
+      <div class="client-header">
+        <span class="client-name">Freelance SEO Consultant</span>
+        <span class="client-type">Gym, Beauty Salon, Upholstery & More</span>
+        <span class="client-type">2022 – 2024</span>
+      </div>
+      <div class="client-meta">Local SEO across multiple competitive niches — Google Business Profile optimization, on-page and technical SEO, UX/UI conversion improvements.</div>
+      <div class="client-stats">
+        <span class="stat">3–5 inbound leads/day per client</span>
+        <span class="stat">#1 Google Business Profile rankings</span>
+        <span class="stat">100 → 1,000+ clicks/mo (10x)</span>
+      </div>
+      <div class="profiles-grid">
+        <div class="profile-card">
+          <div class="profile-screenshot"><img src="robogym_gbp.png" alt="ROBO Gym Google Business Profile"></div>
+          <div class="profile-body">
+            <div class="platform-badge platform-gbp"><span class="icon-dot dot-gbp"></span> Google Business</div>
+            <div class="profile-name">ROBO Boxing Gym</div>
+            <div class="profile-handle"><a href="https://www.google.com/search?q=ROBO+BOXING+GYM" target="_blank">View on Google →</a></div>
+            <div class="profile-role">#1 Local Ranking</div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-screenshot"><img src="face_gbp.png" alt="FACE Weybridge Google Business Profile"></div>
+          <div class="profile-body">
+            <div class="platform-badge platform-gbp"><span class="icon-dot dot-gbp"></span> Google Business</div>
+            <div class="profile-name">FACE Weybridge</div>
+            <div class="profile-handle"><a href="https://www.google.com/search?q=FACE+Weybridge" target="_blank">View on Google →</a></div>
+            <div class="profile-role">Beauty Salon · GBP #1</div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-screenshot">
+            <div class="screenshot-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+              <span class="label">Search Console — 10x Clicks</span>
+              <code>local_client_gsc.png</code>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="platform-badge platform-gsc"><span class="icon-dot dot-gsc"></span> Search Console</div>
+            <div class="profile-name">Local Client</div>
+            <div class="profile-role">100 → 1,000+ clicks/mo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Warsaw, Poland · Available Remotely</p>
+    <a href="#" class="cta">Get in Touch</a>
+  </div>
+
+</body>
+</html>
