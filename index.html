@@ -34,7 +34,7 @@
     width: 100%; aspect-ratio: 16 / 10; background: #0F172A; border-bottom: 1px solid #334155;
     display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
-  .profile-screenshot img { width: 100%; height: 100%; object-fit: contain; }
+  .profile-screenshot img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; }
   .screenshot-placeholder {
     display: flex; flex-direction: column; align-items: center; gap: 8px; color: #475569; padding: 12px; text-align: center;
   }
@@ -68,6 +68,19 @@
     .hero h1 { font-size: 30px; }
     .profiles-grid { grid-template-columns: 1fr; }
   }
+
+  .lightbox-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(2, 6, 23, 0.92);
+    z-index: 1000; align-items: center; justify-content: center; padding: 48px 24px;
+  }
+  .lightbox-overlay.open { display: flex; }
+  .lightbox-overlay img { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-close {
+    position: fixed; top: 20px; right: 24px; width: 44px; height: 44px; border-radius: 50%;
+    background: #1E293B; border: 1px solid #334155; color: #F1F5F9; font-size: 22px; line-height: 1;
+    display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1001;
+  }
+  .lightbox-close:hover { border-color: #22C55E; color: #22C55E; }
 </style>
 </head>
 <body>
@@ -256,6 +269,41 @@
     <p>Warsaw, Poland · Available Remotely</p>
     <a href="mailto:houssam.zaki@icloud.com" class="cta">Get in Touch</a>
   </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-close" id="lightbox-close">&times;</div>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('open');
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    }
+
+    document.querySelectorAll('.profile-screenshot img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        openLightbox(img.src, img.alt);
+      });
+    });
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
